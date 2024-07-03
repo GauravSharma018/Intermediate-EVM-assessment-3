@@ -2,7 +2,7 @@
 This program is a simple contract written in Solidity. The smart contract creates a new ERC20 contract. Only the contract owner is able to mint tokens to a provided address and any user is able to burn and transfer tokens.
 
 # Description
-A basic ERC-20 token contract named BlackAdamToken, built on the ERC20 contract from OpenZeppelin library. The contract inherits from the ERC-20 standard, providing functionalities for a standard fungible token.
+A basic ERC-20 token contract named MyCustomToken, built on the ERC20 contract from OpenZeppelin library. The contract inherits from the ERC-20 standard, providing functionalities for a standard fungible token.
 
 ERC-20 Details:
 Symbol: MTK
