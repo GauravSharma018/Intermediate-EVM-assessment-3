@@ -1,12 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
+
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract MyCustomToken is ERC20 {
     address public owner;
+    
     constructor() ERC20("MyCustomToken", "MTK") {
         owner = msg.sender;
-        _mint(address(this), 1000 );
+        _mint(msg.sender, 1000);
     }
 
     modifier onlyOwner(){
@@ -15,13 +17,13 @@ contract MyCustomToken is ERC20 {
     }
 
     function mintToken(address to, uint256 amount) public onlyOwner{
-        uint bal = balanceOf(address(this));
+        uint bal = balanceOf(msg.sender);
         require(bal >= amount, "INSUFFICIENT BALANCE!");
-        _transfer(address(this), to, amount);
+         _mint(to, amount);
     }
 
-    function transferToken(address from, address to, uint256 amount) public {
-         _transfer(from, to, amount);
+    function transferToken(address to, uint256 amount) public {
+         _transfer(msg.sender, to, amount);
     }
 
     function burnToken(uint256 amount) public {
@@ -29,4 +31,5 @@ contract MyCustomToken is ERC20 {
     }
 
 }
+
 
