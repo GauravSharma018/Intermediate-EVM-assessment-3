@@ -8,7 +8,6 @@ contract MyCustomToken is ERC20 {
     
     constructor() ERC20("MyCustomToken", "MTK") {
         owner = msg.sender;
-        _mint(msg.sender, 1000);
     }
 
     modifier onlyOwner(){
